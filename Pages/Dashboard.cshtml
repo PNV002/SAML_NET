@@ -1,0 +1,62 @@
+@page "/Dashboard"
+@using Okta_SAML_Example.Pages
+@model DashboardModel
+@{
+    Layout = null; 
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="~/css/dash.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@300;400;500;600;700&family=Varela+Round&display=swap" rel="stylesheet">
+    <title>Landing Page</title>
+</head>
+<body>
+    <header>
+        <h1>Okta_SAML</h1>
+
+        <section class="menu">
+            <ul class="menu-list">
+                <li>Home</li>
+                <li>About Us</li>
+                <li>Contact</li>
+            </ul>
+
+            <button>
+                <i class="fas fa-times"></i>
+                <i class="fas fa-bars"></i>
+            </button>
+        </section>
+    </header>
+
+    <section class="main">
+
+            <section class="left">
+                <p class="title">Welcome</p>
+                <p class="msg">You have successfully logged in.</p>
+                <form class="form-inline" asp-controller="Auth" asp-action="Logout">
+                    <button type="submit" class="cta">Logout</button>
+                </form>
+            </section>
+
+            <section class="right">
+                <img src="~/images/study.jpg" alt="Landing Image">
+            </section>
+
+    </section>
+
+    <script>
+        var menu = document.querySelector('.menu');
+        var menuBtn = document.querySelector('.menu button');
+        menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('opened')
+        })
+
+    </script>
+
+</body>
+</html>
